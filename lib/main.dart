@@ -31,18 +31,57 @@ class HomePage extends StatelessWidget {
         title: const Text("MoveOn"),
       ),
       body: Column(
-        mainAxisSize: MainAxisSize.max,
         children: <Widget>[
-          Row(
-            mainAxisSize: MainAxisSize.max,
-              children: <Widget> [
-                  FittedBox(
-                    fit: BoxFit.cover,
-                    child: SvgPicture.asset('assets/image/wave-home-top.svg'),
-                  ),
-
-              ]
+          const Expanded(
+              child: SizedBox()
           ),
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: const [
+                    Center(
+                      child: Text(
+                        "Move'On",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Center(
+                      child: Text(
+                        "Choose your journey",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Register'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Login'),
+                    ),
+                  ]
+              ))
         ],
       )
     );
