@@ -27,9 +27,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("MoveOn"),
-      ),
       body: Column(
         children: <Widget>[
           const Expanded(
@@ -48,7 +45,7 @@ class HomePage extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue
+                            color: Color(0xff695EF5)
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -58,7 +55,7 @@ class HomePage extends StatelessWidget {
                         "Choose your journey",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue
+                            color: Color(0xff695EF5)
                         ),
                       ),
                     ),
@@ -75,10 +72,16 @@ class HomePage extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       child: const Text('Register'),
+                      style: ElevatedButton.styleFrom(
+                        primary: const Color(0xff695EF5)
+                      ),
                     ),
                     ElevatedButton(
                       onPressed: () {},
                       child: const Text('Login'),
+                      style: ElevatedButton.styleFrom(
+                          primary: const Color(0xff695EF5)
+                      ),
                     ),
                   ]
               ))
