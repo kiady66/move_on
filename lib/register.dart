@@ -31,6 +31,7 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                Text("S'enregistrer", style),
                 TextFormField(
                   decoration: InputDecoration(
                       labelText: 'Prénom',
@@ -95,6 +96,7 @@ class _HomeState extends State<Home> {
                     }*/
                   },
                 ),
+                Text('Déjà enregistré ? Logger vous'),
                 const Image (
                   image: AssetImage('assets/images/VioletVague.png')
                 )
