@@ -61,6 +61,7 @@ class _LoginState extends State<Login> {
                     }*/
                   },
                 ),
+                Text('Mot de passe oublié'),
               ],
             ),
           ),
