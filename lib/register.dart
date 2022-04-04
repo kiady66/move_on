@@ -15,13 +15,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('premiers pas'),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        title: Text("Move'On", style: TextStyle(fontSize: 40, color: Color.fromARGB(255, 105, 94, 245))),
         centerTitle: true,
+        elevation: 0.0,
       ),
       body : SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0),
+          padding: EdgeInsets.symmetric(vertical: 60.0),
+          color: Colors.white,
           child: Form(
 //            key: _keyForm,
             child: Column(
@@ -80,9 +84,9 @@ class _HomeState extends State<Home> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 105, 94, 245),
                   child: Text(
-                    'Valide-moi',
+                    "S'enregistrer",
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: (){
@@ -91,6 +95,9 @@ class _HomeState extends State<Home> {
                     }*/
                   },
                 ),
+                const Image (
+                  image: AssetImage('assets/images/VioletVague.png')
+                )
               ],
             ),
           ),
