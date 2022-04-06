@@ -16,8 +16,10 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Move'On"),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        title: Text("Move'On", style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 105, 94, 245))),
         centerTitle: true,
+        elevation: 0.0,
       ),
       body : SingleChildScrollView(
         child: Container(
@@ -45,23 +47,24 @@ class _LoginState extends State<Login> {
                   onChanged: (val) => password = val,*/
                   obscureText: true,
                 ),
+                Text('Mot de passe oublié ?'),
                 SizedBox(height: 10.0),
                 RaisedButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 105, 94, 245),
                   child: Text(
                     'Se connecter',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: (){
-                    /*if(_keyForm.currentState.validate()){
-                      Navigator.pushReplacementNamed(context, '/contactList');
-                    }*/
                   },
                 ),
-                Text('Mot de passe oublié'),
+                const Image (
+                    image: AssetImage('assets/images/VioletVague.png')
+
+                )
               ],
             ),
           ),

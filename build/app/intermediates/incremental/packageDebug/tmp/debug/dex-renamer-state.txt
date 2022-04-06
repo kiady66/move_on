@@ -1,4 +1,4 @@
-#Wed Mar 30 23:50:28 CEST 2022
+#Wed Apr 06 19:17:10 CEST 2022
 base.0=C\:\\Users\\schae\\OneDrive\\Documents\\EPSI\\2021-2022\\Open Inov\\move_on\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
