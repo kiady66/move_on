@@ -1,6 +1,8 @@
 
 import 'package:move_on/login.dart';
+import 'package:move_on/profile.dart';
 import 'package:flutter/material.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,12 +16,13 @@ class MyApp extends StatelessWidget {
         buttonTheme: ButtonThemeData(
           textTheme: ButtonTextTheme.primary,
         ),
+        fontFamily : 'Rubik',
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login',
+      initialRoute: '/profile',
       routes: {
-        '/login': (context) => Login(),
+        '/profile': (context) => Profile(),
       },
     );
   }

@@ -68,6 +68,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///C:/Users/schae/flutter_windows_2.10.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-10.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///C:/Users/schae/flutter_windows_2.10.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
       "packageUri": "lib/",
@@ -158,7 +164,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-06T17:13:35.502892Z",
+  "generated": "2022-04-12T22:07:42.047984Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }
