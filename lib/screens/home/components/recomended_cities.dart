@@ -10,8 +10,8 @@ class RecomendedCity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(children: [
+      scrollDirection: Axis.vertical,
+      child: Column(children: [
         RecomendCityCard(
           title: "Samantha",
           image:
@@ -114,7 +114,7 @@ class RecomendCityCard extends StatelessWidget {
           top: myDefaultPadding / 2,
           left: myDefaultPadding,
           bottom: myDefaultPadding * 2.5),
-      width: size.width * 0.4,
+      width: size.width * 0.7,
       child: Column(
         children: <Widget>[
           ClipRRect(

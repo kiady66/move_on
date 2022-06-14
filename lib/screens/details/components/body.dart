@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:move_on/constants.dart';
-import 'icon_card.dart';
 import 'image_and_icons.dart';
 
 class Body extends StatelessWidget {

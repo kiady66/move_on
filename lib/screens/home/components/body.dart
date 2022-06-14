@@ -14,9 +14,8 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          HeaderWithSearchBar(size: size),
           TitleWithMoreBtn(
-            title: "Popular",
+            title: "Favorite",
             press: () {},
           ),
           RecomendedCity(),
