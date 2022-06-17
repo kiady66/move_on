@@ -7,25 +7,19 @@ import 'package:http/http.dart' as http;
 
 import 'home.dart';
 
-class Register extends StatefulWidget {
+class Login extends StatefulWidget {
   @override
-  _RegisterState createState() => _RegisterState();
+  _LoginState createState() => _LoginState();
 }
 
-class _RegisterState extends State<Register> {
+class _LoginState extends State<Login> {
 
-  String prenom = '';
-  String nom = '';
   String email = '';
   String password = '';
-  String confirmPss = '';
   final _keyForm = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-   /* if(_keyForm.currentState.validate()){
-                      Navigator.pushReplacementNamed(context, '/contactList');
-                    }*/
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -50,50 +44,9 @@ class _RegisterState extends State<Register> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
 
-                Text("Enregistrez-vous !", style : TextStyle(fontSize: 20, color: Color.fromARGB(255, 105, 94, 245))),
+                Text("Connectez-vous !", style : TextStyle(fontSize: 20, color: Color.fromARGB(255, 105, 94, 245))),
 
                 SizedBox(height: 10),
-
-                TextFormField(
-                  validator: (value) {
-                    if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner un prénom';
-                    }
-                    if (value.trim().length < 3){
-                      return 'Votre prénom doit faire au moins 3 caractères';
-                    }
-                    return null;
-
-                  },
-
-                  onChanged: (value) => prenom = value,
-                  decoration: InputDecoration(
-                      labelText: 'Prénom',
-                      border: OutlineInputBorder()
-                  ),
-                ),
-
-                SizedBox(height: 10.0),
-
-                TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'Nom',
-                      border: OutlineInputBorder()
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner un nom';
-                    }
-                    if (value.trim().length < 3){
-                      return 'Votre nom doit faire au moins 3 caractères';
-                    }
-                    return null;
-                  },
-
-                  onChanged: (value) => nom = value,
-                ),
-
-                SizedBox(height: 10.0),
 
                 TextFormField(
                   decoration: InputDecoration(
@@ -134,26 +87,6 @@ class _RegisterState extends State<Register> {
                   onChanged: (value) => password = value,
                 ),
 
-                SizedBox(height: 10.0),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                      labelText: 'Confirmez le mot de passe',
-                      border: OutlineInputBorder()
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner ce champ';
-                    }
-                    if (value != password){
-                      return "Le mot de passe de confirmation ne correspond pas à celui attendu";
-                    }
-                    return null;
-                  },
-
-                  onChanged: (value) => confirmPss = value,
-                ),
-
                 SizedBox(height: 5.0),
 
                 Row(
@@ -190,15 +123,13 @@ class _RegisterState extends State<Register> {
                       ),
                       onPressed: () async {
                         if(_keyForm.currentState!.validate()){
-                          var url = Uri.parse('http://10.0.2.2:3000/register');
+                          var url = Uri.parse('http://10.0.2.2:3000/login');
                           print("avant requete");
-                          var response = await http.post(url, body: {
-                            "first_name": prenom,
-                            "last_name": nom,
-                            "password": password,
-                            "email": email});
+                          var response = await http.get(url, headers: {
+                            "email": email,
+                            "password": password});
                           print("AVANT IF");
-                          if (response.statusCode == 201){
+                          if (response.statusCode == 200){
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(builder: (context) => Home())
@@ -209,8 +140,8 @@ class _RegisterState extends State<Register> {
                           }
                           print("OKKKKK");
                           print('Response status: ${response.statusCode}');
-                          print('Response body: ${response.body}');
-                    }
+                          print('Response body: ${response.headers}');
+                        }
                       },
                     ),
 
