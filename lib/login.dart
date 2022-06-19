@@ -44,7 +44,7 @@ class _LoginState extends State<Login> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
 
-                Text("Connectez-vous !", style : TextStyle(fontSize: 20, color: Color.fromARGB(255, 105, 94, 245))),
+                Text("Login !", style : TextStyle(fontSize: 20, color: Color.fromARGB(255, 105, 94, 245))),
 
                 SizedBox(height: 10),
 
@@ -55,10 +55,10 @@ class _LoginState extends State<Login> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner une adresse mail';
+                      return 'Please enter an email';
                     }
                     if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)){
-                      return "Le format de votre adresse mail n'est pas valide";
+                      return "The format of your email address is invalid";
                     }
                     return null;
                   },
@@ -71,15 +71,15 @@ class _LoginState extends State<Login> {
                 TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      labelText: 'Mot de passe',
+                      labelText: 'Password',
                       border: OutlineInputBorder()
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner un mot de passe';
+                      return 'Please enter a password';
                     }
                     if (value.trim().length < 8){
-                      return "Votre mot de passe doit faire minimum 8 caractères";
+                      return "Your password must be at least 8 characters long";
                     }
                     return null;
                   },
@@ -99,7 +99,7 @@ class _LoginState extends State<Login> {
                       ),
                       color: Color.fromARGB(255, 105, 94, 245),
                       child: Text(
-                        "Retour",
+                        "Back",
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: (){
@@ -118,7 +118,7 @@ class _LoginState extends State<Login> {
                       ),
                       color: Color.fromARGB(255, 105, 94, 245),
                       child: Text(
-                        "S'enregistrer",
+                        "Login",
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: () async {
@@ -136,7 +136,7 @@ class _LoginState extends State<Login> {
                             );
                           }
                           else {
-                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Erreur lors de l'envoie du formulaire")),);
+                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Error submitting form")),);
                           }
                           print("OKKKKK");
                           print('Response status: ${response.statusCode}');
@@ -147,22 +147,6 @@ class _LoginState extends State<Login> {
 
                   ],
                 ),
-
-                Row(
-                  children: [
-                    Text('Déjà enregistré ?'),
-                    TextButton(onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Login())
-                      );
-                    },
-                      style: TextButton.styleFrom(primary: Color.fromARGB(255, 105, 94, 245)),
-                      child: Text('Logger vous'),
-                    ),
-                  ],
-                ),
-
               ],
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:move_on/register.dart';
+import 'package:move_on/screens/details/components/icon_card.dart';
 
 import 'login.dart';
 
@@ -50,6 +51,30 @@ class _WelcomeState extends State<Welcome> {
                 ],
               ),
             ),
+            Container(
+                child: Row(
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.only(left: 100),
+                      ),
+                      IconCard(icon: Icon(Icons.airplanemode_active)),
+                      SizedBox(width: 50),
+                      IconCard(icon: Icon(Icons.car_rental)),
+                    ],
+                ),
+            ),
+            Container(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 100),
+                  ),
+                  IconCard(icon: Icon(Icons.directions_boat)),
+                  SizedBox(width: 50),
+                  IconCard(icon: Icon(Icons.directions_bike)),
+                ],
+              ),
+            ),
             Expanded(
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -62,7 +87,7 @@ class _WelcomeState extends State<Welcome> {
                             MaterialPageRoute(builder: (context) => Register())
                           );
                         },
-                        child: const Text("S'enregistrer"),
+                        child: const Text("Register"),
                         style: ElevatedButton.styleFrom(
                             primary: const Color(0xff695EF5)
                         ),
@@ -74,7 +99,7 @@ class _WelcomeState extends State<Welcome> {
                               MaterialPageRoute(builder: (context) => Login())
                           );
                         },
-                        child: const Text('Se connecter'),
+                        child: const Text('Login'),
                         style: ElevatedButton.styleFrom(
                             primary: const Color(0xff695EF5)
                         ),

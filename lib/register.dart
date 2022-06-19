@@ -50,17 +50,17 @@ class _RegisterState extends State<Register> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
 
-                Text("Enregistrez-vous !", style : TextStyle(fontSize: 20, color: Color.fromARGB(255, 105, 94, 245))),
+                Text("Register !", style : TextStyle(fontSize: 20, color: Color.fromARGB(255, 105, 94, 245))),
 
                 SizedBox(height: 10),
 
                 TextFormField(
                   validator: (value) {
                     if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner un prénom';
+                      return 'Please enter a first name';
                     }
                     if (value.trim().length < 3){
-                      return 'Votre prénom doit faire au moins 3 caractères';
+                      return 'Your first name must be at least 3 characters long';
                     }
                     return null;
 
@@ -68,7 +68,7 @@ class _RegisterState extends State<Register> {
 
                   onChanged: (value) => prenom = value,
                   decoration: InputDecoration(
-                      labelText: 'Prénom',
+                      labelText: 'First Name',
                       border: OutlineInputBorder()
                   ),
                 ),
@@ -77,15 +77,15 @@ class _RegisterState extends State<Register> {
 
                 TextFormField(
                   decoration: InputDecoration(
-                      labelText: 'Nom',
+                      labelText: 'Surname',
                       border: OutlineInputBorder()
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner un nom';
+                      return 'Please enter a surname';
                     }
                     if (value.trim().length < 3){
-                      return 'Votre nom doit faire au moins 3 caractères';
+                      return 'Your surname must be at least 3 characters long';
                     }
                     return null;
                   },
@@ -102,10 +102,10 @@ class _RegisterState extends State<Register> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner une adresse mail';
+                      return 'Please enter an email';
                     }
                     if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)){
-                      return "Le format de votre adresse mail n'est pas valide";
+                      return "The format of your email address is invalid";
                     }
                     return null;
                   },
@@ -118,15 +118,15 @@ class _RegisterState extends State<Register> {
                 TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      labelText: 'Mot de passe',
+                      labelText: 'Password',
                       border: OutlineInputBorder()
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner un mot de passe';
+                      return 'Please enter a password';
                     }
                     if (value.trim().length < 8){
-                      return "Votre mot de passe doit faire minimum 8 caractères";
+                      return "Your password must be at least 8 characters long";
                     }
                     return null;
                   },
@@ -138,15 +138,15 @@ class _RegisterState extends State<Register> {
                 TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      labelText: 'Confirmez le mot de passe',
+                      labelText: 'Confirm Password',
                       border: OutlineInputBorder()
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty){
-                      return 'Veuillez renseigner ce champ';
+                      return 'Please fill in this field';
                     }
                     if (value != password){
-                      return "Le mot de passe de confirmation ne correspond pas à celui attendu";
+                      return "Confirmation password does not match expected";
                     }
                     return null;
                   },
@@ -166,7 +166,7 @@ class _RegisterState extends State<Register> {
                       ),
                       color: Color.fromARGB(255, 105, 94, 245),
                       child: Text(
-                        "Retour",
+                        "Back",
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: (){
@@ -185,7 +185,7 @@ class _RegisterState extends State<Register> {
                       ),
                       color: Color.fromARGB(255, 105, 94, 245),
                       child: Text(
-                        "S'enregistrer",
+                        "Register",
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: () async {
@@ -205,7 +205,7 @@ class _RegisterState extends State<Register> {
                             );
                           }
                           else {
-                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Erreur lors de l'envoie du formulaire")),);
+                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Error submitting form")),);
                           }
                           print("OKKKKK");
                           print('Response status: ${response.statusCode}');
@@ -219,7 +219,7 @@ class _RegisterState extends State<Register> {
 
                 Row(
                   children: [
-                    Text('Déjà enregistré ?'),
+                    Text('Already registered ?'),
                     TextButton(onPressed: () {
                       Navigator.push(
                           context,
@@ -227,7 +227,7 @@ class _RegisterState extends State<Register> {
                       );
                     },
                       style: TextButton.styleFrom(primary: Color.fromARGB(255, 105, 94, 245)),
-                      child: Text('Logger vous'),
+                      child: Text('Login'),
                     ),
                   ],
                 ),

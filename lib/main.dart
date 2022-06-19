@@ -2,6 +2,7 @@ import 'package:move_on/home.dart';
 import 'package:move_on/profil.dart';
 import 'package:move_on/register.dart';
 import 'package:flutter/material.dart';
+import 'package:move_on/map.dart';
 
 import 'favorite.dart';
 import 'welcome.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         '/move_on/login': (context) => Login(),
         '/move_on/register': (context) => Register(),
         '/move_on/main': (context) => Home(),
-        //'/move_on/main/city': (context) => City(),
+        '/move_on/map': (context) => Map(),
         //'/move_on/main/category': (context) => Category(),
         //'/move_on/main/popular': (context) => Popular(),
         //'/move_on/tour': (context) => Tour(),

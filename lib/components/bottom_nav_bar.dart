@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:move_on/favorite.dart';
 import 'package:move_on/home.dart';
 import 'package:move_on/profil.dart';
+import 'package:move_on/map.dart';
 import '../constantes.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -36,6 +37,17 @@ class BottomNavBar extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => Home())
             );},
             icon: Icon(Icons.home),
+          ),
+          IconButton(
+            iconSize: 35,
+            color: Color.fromARGB(255, 105, 94, 245),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Map())
+              );
+            },
+            icon: Icon(Icons.map_outlined),
           ),
           IconButton(
             iconSize: 35,
